@@ -14,11 +14,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from .views import hello, home_page
+from .views import hello, time_now, hours_ahead
 
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', hello),
-    url(r'^$', home_page),
+    url(r'^time/$', time_now),
+    url(r'^time/plus/(\d{1,2})/$', hours_ahead),
 ]
